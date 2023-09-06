@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,78 +12,86 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+
         header {
             background-color: #333;
             color: #fff;
             padding: 10px 0;
             text-align: center;
         }
+
         header img {
-            width: 100px; 
+            width: 100px;
         }
+
         header a {
             color: #fff;
             text-decoration: none;
             margin: 0 20px;
         }
+
         header a:hover {
             text-decoration: underline;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
+
+        
         h1 {
             text-align: center;
         }
+
         p {
             margin: 20px 0;
         }
+
         .slider-container {
             position: relative;
             max-width: 100%;
             overflow: hidden;
         }
+
         .slider {
-            display: flex;
+            display: grid;
             transition: all 0.5s ease-in-out;
         }
+
         .slider img {
-            width: 100%;
-            max-height: 300px;
+            width: 100vw;
+            max-height: 50vw;
             object-fit: cover;
         }
+
         .footer {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 20px 0;
         }
+
     </style>
+
 </head>
+
 <body>
     <header>
         <img src="logonew.ico" alt="Logo">
         <nav>
             <a href="aboutus.html">About Us</a>
-            <a href="loginform.html">Login</a>
-            <a href="registrationform.html">Registration</a>
+            <a href="loginform.html">Sign In</a>
+            <a href="registrationform.html">Sign Up</a>
             <a href="contactus.html">Contact Us</a>
         </nav>
     </header>
     <div class="container">
         <h1>Welcome to Our Website</h1>
-        <p>This is a simple website with a navigation bar and links to various pages.</p>
+        <p>Welcome to My Company, a company dedicated to in helping out in business field. Founded in 2000..</p>
         <div class="slider-container">
             <div class="slider">
                 <img src="pic1.jpeg" alt="Image 1">
                 <img src="pic2.jpg" alt="Image 2">
                 <img src="pic3.webp" alt="Image 3">
-                
+                <img src="pic4.jpg" alt="Image 3">
+                <img src="pic5.jpg" alt="Image 3">
+
             </div>
         </div>
     </div>
@@ -92,6 +101,7 @@
         Phone: (123) 456-7890<br>
         Email: info@mywebsite.com
     </footer>
-    
+
 </body>
+
 </html>
