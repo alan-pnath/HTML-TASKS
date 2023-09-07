@@ -109,7 +109,7 @@ p {
 }
 
 .slider img {
-    max-width: 30%; /* Limit the width to 100% of the container */
+    max-width: 40%; /* Limit the width to 100% of the container */
     max-height: 500px; /* Set the maximum height to control the size */
     object-fit: cover;
     transition: transform 0.3s ease;
@@ -123,7 +123,7 @@ p {
 
 
 .footer {
-    background-color: #333;
+    background-color: #6e4c85;
     color: #fff;
     text-align: center;
     padding: 20px 0;
