@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <script lang="javascript" src="script/script.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
             padding: 0;
+            position: relative;
+
         }
+
+        body::after {
+            content: "";
+            background-image: url("E:/TASKS/HTML TASKS/images/bgimage/bgwebsite.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
         header {
             background-color: #6e4c85;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
+
         h1 {
             font-size: 36px;
+            text-shadow: 2px 2px 5px red;
         }
+
         p {
             font-size: 18px;
             line-height: 1.5;
         }
+
         form {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+            align-items: center;
+            
+
         }
+
+        
+        form:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
         label {
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
         }
+
         input[type="text"],
         input[type="email"],
         textarea {
@@ -44,6 +80,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         input[type="submit"] {
             background-color: #333;
             color: #fff;
@@ -52,6 +89,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         .footer {
             background-color: #6e4c85;
             color: #fff;
@@ -60,6 +98,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Contact Us</h1>
@@ -68,17 +107,41 @@
         <section>
             <h2>Contact Information</h2>
             <p>
-                If you have any questions or need assistance, please feel free to contact us using the form below or via the provided contact information.
+                If you have any questions or need assistance, please feel free to contact us using the form below or via
+                the provided contact information.
             </p>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required onfocusout="validateEmail(this.value)">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="submit" onclick="submitForm()" value="Submit">
+            </form>
             <address>
                 <p><strong>Address:</strong> 123 Main Street, xyz, abcds</p>
                 <p><strong>Email:</strong> info@example.com</p>
                 <p><strong>Phone:</strong> +1 (123) 456-7890</p>
             </address>
+
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 YourCompanyName. All rights reserved.</p>
+        <p>&copy; 2023 My Company. All rights reserved.</p>
     </footer>
+    <script>
+        function validateEmail(email) {
+            // Regular expression for a basic email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+            }
+        }
+    </script>
 </body>
+
 </html>

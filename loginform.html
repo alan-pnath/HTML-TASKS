@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+    <script lang="javascript" src="script/script.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -85,7 +86,7 @@
 
     <div class="container">
         <h2>Login</h2>
-        <form action="login.php" method="post">
+        <form action="website.html" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -98,7 +99,7 @@
                 <input type="checkbox" id="remember-me" name="remember-me">
                 <label for="remember-me">Remember Me</label>
             </div>
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" onclick=login() class="btn">Login</button>
         </form>
         <div class="forgot-password">
             <a href="#">Forgot Password?</a>
