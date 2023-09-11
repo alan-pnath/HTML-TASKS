@@ -4,96 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Registration - MY COMPANY</title>
+    <link rel="stylesheet" type="text/css" href="styles\style.css">
     <script lang="javascript" src="script/script.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        body::after {
-            content: "";
-            background-image: url("E:/TASKS/HTML TASKS/images/bgimage/bgwebsite.jpg");
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        h2 {
-            margin-top: 0;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        input[type="checkbox"] {
-            margin-right: 5px;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .forgot-password,
-        .signup-link {
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
 </head>
 
 <body>
-
+    <header>
+        <img class="logo" src="images/icons/logonew.ico" alt="Logo">
+        <span class="logoname">MY COMPANY</span>
+        <nav class="navtxt">
+            <a href="website.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="loginform.html">Sign In</a>
+            <a href="registrationform.html">Sign Up</a>
+            <a href="contactus.html">Contact Us</a>
+        </nav>
+        
+    </header>
     <div class="container">
         <h2>Login</h2>
-        <form action="website.html" method="post">
+        <form  method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required >
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
             </div>
             <div class="form-group">
                 <input type="checkbox" id="remember-me" name="remember-me">
@@ -107,10 +45,17 @@
         <div class="signup-link">
             Don't have an account? <a href="registrationform.html">Sign Up</a>
         </div>
-        <div class="signup-link">
+        <!-- <div class="signup-link">
             HOME PAGE <a href="website.html">HOME</a>
-        </div>
+        </div> -->
     </div>
+    <footer class="footer">
+        &copy; 2023 My COMPANY<br>
+        123 Main Street, xyz, abcds<br>
+        Phone: (123) 456-7890<br>
+        Email: info@mywebsite.com
+    </footer>
+
 </body>
 
 </html>

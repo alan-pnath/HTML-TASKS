@@ -38,6 +38,9 @@ s_a[33]=" Achhnera | Agra | Akbarpur | Aliganj | Aligarh | Allahabad | Ambedkar 
 s_a[34]=" Almora | Bageshwar | Bhatwari | Chakrata | Chamoli | Champawat | Dehradun | Deoprayag | Dharchula | Dunda | Haldwani | Haridwar | Joshimath | Karan Prayag | Kashipur | Khatima | Kichha | Lansdown | Munsiari | Mussoorie | Nainital | Pantnagar | Partapnagar | Pauri Garhwal | Pithoragarh | Purola | Rajgarh | Ranikhet | Roorkee | Rudraprayag | Tehri Garhwal | Udham Singh Nagar | Ukhimath | Uttarkashi ";
 s_a[35]=" Adra | Alipurduar | Amlagora | Arambagh | Asansol | Balurghat | Bankura | Bardhaman | Basirhat | Berhampur | Bethuadahari | Birbhum | Birpara | Bishanpur | Bolpur | Bongoan | Bulbulchandi | Burdwan | Calcutta | Canning | Champadanga | Contai | Cooch Behar | Daimond Harbour | Dalkhola | Dantan | Darjeeling | Dhaniakhali | Dhuliyan | Dinajpur | Dinhata | Durgapur | Gangajalghati | Gangarampur | Ghatal | Guskara | Habra | Haldia | Harirampur | Harishchandrapur | Hooghly | Howrah | Islampur | Jagatballavpur | Jalpaiguri | Jhalda | Jhargram | Kakdwip | Kalchini | Kalimpong | Kalna | Kandi | Karimpur | Katwa | Kharagpur | Khatra | Krishnanagar | Mal Bazar | Malda | Manbazar | Mathabhanga | Medinipur | Mekhliganj | Mirzapur | Murshidabad | Nadia | Nagarakata | Nalhati | Nayagarh | Parganas | Purulia | Raiganj | Rampur Hat | Ranaghat | Seharabazar | Siliguri | Suri | Takipur | Tamluk";
 
+
+
+
 function print_state(state_id){
 	
 	var option_str = document.getElementById(state_id);
@@ -49,6 +52,9 @@ function print_state(state_id){
 	}
 }
 
+
+
+
 function print_city(city_id, city_index){
 	var option_str = document.getElementById(city_id);
 	option_str.length=0;	
@@ -59,6 +65,10 @@ function print_city(city_id, city_index){
 		option_str.options[option_str.length] = new Option(city_arr[i],city_arr[i]);
 	}
 }
+
+
+
+
 
 function login() {
     const username = document.getElementById("username").value;
@@ -85,6 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
 function submitForm() {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
@@ -106,3 +119,26 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     submitForm(); 
 });
 
+
+
+
+function validatePassword() {
+    
+    var passwordInput = document.getElementById("password");
+    var passwordError = document.getElementById("password-error");
+    var password = passwordInput.value;
+
+    var minLength = 8;
+    var hasUpperCase = /[A-Z]/.test(password);
+    var hasLowerCase = /[a-z]/.test(password);
+    var hasDigit = /\d/.test(password);
+    var hasSpecialChar = /[!@#$%^&*]/.test(password);
+
+    if (password.length < minLength) {
+        passwordError.textContent = "Password must be at least " + minLength + " characters long.";
+    } else if (!(hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar)) {
+        passwordError.textContent = "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.";
+    } else {
+        passwordError.textContent = "";
+    }
+}

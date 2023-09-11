@@ -4,87 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Registration - MY COMPANY</title>
+    <link rel="stylesheet" type="text/css" href="styles\style.css">
     <script lang="javascript" src="script/script.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        body::before {
-            content: "";
-            background-image: url("E:/TASKS/HTML TASKS/images/bgimage/bgwebsite.jpg");
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
-            position: fixed;
-            /* Change to fixed position */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        h2 {
-            margin-top: 0;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input[type="text"],
-        input[type="password"],
-        input[type="email"],
-        input[type="date"],
-        input[type="tel"],
-        select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .login-link {
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
-
 </head>
 
 <body>
-
+    <header>
+        <img class="logo" src="images/icons/logonew.ico" alt="Logo">
+        <span class="logoname">MY COMPANY</span>
+        <nav class="navtxt">
+            <a href="website.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="loginform.html">Sign In</a>
+            <a href="registrationform.html">Sign Up</a>
+            <a href="contactus.html">Contact Us</a>
+        </nav>
+        
+    </header>
     <div class="container">
         <h2>Register</h2>
         <form action="loginform.html" method="post">
@@ -112,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                <input type="number" id="phone" name="phone" placeholder="Enter your phone number" required>
             </div>
             <div class="form-group">
                 <label for="email">Email Address</label>
@@ -133,16 +70,16 @@
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required onfocusout="validateEmail(this.value)">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Choose a password" required onblur="validatePassword(this)">
+                <input type="password" id="password" name="password" placeholder="Choose a password" required
+                    onfocusout="validatePassword()">
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password"
-                    required>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
                 <span id="password-error" class="error"></span>
             </div>
             <button type="submit" class="btn">Register</button>
@@ -150,36 +87,27 @@
         <div class="login-link">
             Already have an account? <a href="loginform.html">Login</a>
         </div>
-        <div class="login-link">
+        <!-- <div class="login-link">
             Home Page <a href="website.html">HOME</a>
-        </div>
+        </div> -->
     </div>
-    <script type="text/javascript">
-        print_state("sts");
 
+    <footer class="footer">
+        &copy; 2023 My COMPANY<br>
+        123 Main Street, xyz, abcds<br>
+        Phone: (123) 456-7890<br>
+        Email: info@mywebsite.com
+    </footer>
+
+    <script>
         function validateEmail(email) {
-            
+            // Regular expression for a basic email validation
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 alert('Please enter a valid email address');
             }
         }
-
-        function validatePassword(inputElement) {
-        var password = inputElement.value;
-        var passwordError = document.getElementById('password-error');
-
-        
-        if (password.length < 8) {
-            passwordError.textContent = 'Password must be at least 8 characters long';
-        } else {
-            passwordError.textContent = ''; 
-        }
-        }
-
-
     </script>
-
 </body>
 
 </html>

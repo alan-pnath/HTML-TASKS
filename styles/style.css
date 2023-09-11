@@ -28,6 +28,68 @@ header {
     text-align: justify;
     position: relative;
 }
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="password"],
+.form-group select,
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.btn {
+    background-color: #6e4c85;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #543961;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-link a {
+    text-decoration: none;
+    color: #6e4c85;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
 nav.navtxt{
     text-align: center;
     text-shadow: 2px 2px 5px rgb(0, 255, 213);
@@ -46,8 +108,8 @@ nav.navtxt{
 
 header img {
     width: 50px;
-    position: absolute; /* Add position absolute to the image */
-    left: 55px; /* Adjust the left position as needed */
+    position: absolute; 
+    left: 55px;
     top: 10px;
     
 }
@@ -57,7 +119,7 @@ header a {
     text-decoration: none;
     margin: 0 20px;
     position: relative;
-    transition: transform 0.3s ease; /* Add a transition for the transform property */
+    transition: transform 0.3s ease; 
 }
 
 header a::before {
@@ -68,18 +130,18 @@ header a::before {
     bottom: 0;
     left: 0;
     background-color: #fff;
-    transform: scaleX(0); /* Initially, set the width to 0 */
+    transform: scaleX(0); 
     transform-origin: right;
-    transition: transform 0.3s ease; /* Add a transition for the transform property */
+    transition: transform 0.3s ease; 
 }
 
 header a:hover {
     text-decoration: none;
-    transform: translateY(-3px); /* Add a subtle upward lift on hover */
+    transform: translateY(-3px); 
 }
 
 header a:hover::before {
-    transform: scaleX(1); /* Expand the underline on hover */
+    transform: scaleX(1); 
     transform-origin: left;
 }
 
@@ -103,17 +165,17 @@ p {
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    overflow-x: scroll; /* Enable horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Snap to each image */
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    overflow-x: scroll; 
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; 
 }
 
 .slider img {
-    max-width: 40%; /* Limit the width to 100% of the container */
-    max-height: 500px; /* Set the maximum height to control the size */
+    max-width: 40%;
+    max-height: 500px;
     object-fit: cover;
     transition: transform 0.3s ease;
-    scroll-snap-align: center; /* Snap the images to the center */
+    scroll-snap-align: center;
 }
 
 .slider img:hover {
