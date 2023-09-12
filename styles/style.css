@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    min-height: 100vh;
 
 }
 
@@ -36,12 +37,14 @@ header {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
     max-width: 600px;
+    flex: 5;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    padding: 2px;
 }
 
 .form-group input[type="text"],
@@ -49,7 +52,9 @@ header {
 .form-group input[type="number"],
 .form-group input[type="password"],
 .form-group select,
-.form-group input[type="date"] {
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -91,7 +96,7 @@ header {
 }
 
 nav.navtxt{
-    text-align: center;
+    text-align: right;
     text-shadow: 2px 2px 5px rgb(0, 255, 213);
 }
 .logoname{
@@ -104,6 +109,15 @@ nav.navtxt{
     font-size: 20px;
 
 }
+
+.error{
+    color: red;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-weight: 2;
+    
+}
+
 
 
 header img {
@@ -165,9 +179,9 @@ p {
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    overflow-x: scroll; 
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
 }
 
 .slider img {

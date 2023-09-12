@@ -4,141 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <script lang="javascript" src="script/script.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            position: relative;
-
-        }
-
-        body::after {
-            content: "";
-            background-image: url("E:/TASKS/HTML TASKS/images/bgimage/bgwebsite.jpg");
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        header {
-            background-color: #6e4c85;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 36px;
-            text-shadow: 2px 2px 5px red;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.5;
-        }
-
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            transition: box-shadow 0.3s ease;
-            align-items: center;
-            
-
-        }
-
-        
-        form:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        input[type="submit"] {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .footer {
-            background-color: #6e4c85;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-    </style>
+    <title>Contact Us - MY COMPANY</title>
+    <link rel="stylesheet" type="text/css" href="styles\style.css">
 </head>
 
 <body>
     <header>
-        <h1>Contact Us</h1>
+        <img class="logo" src="images/icons/logonew.ico" alt="Logo">
+        <span class="logoname">MY COMPANY</span>
+        <nav class="navtxt">
+            <a href="website.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="loginform.html">Sign In</a>
+            <a href="registrationform.html">Sign Up</a>
+            <a href="contactus.html">Contact Us</a>
+        </nav>
     </header>
-    <main>
-        <section>
-            <h2>Contact Information</h2>
-            <p>
-                If you have any questions or need assistance, please feel free to contact us using the form below or via
-                the provided contact information.
-            </p>
-            <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required onfocusout="validateEmail(this.value)">
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <input type="submit" onclick="submitForm()" value="Submit">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form method="post" id="contactForm">
+                <!-- Replace "contact_submission.php" with the actual PHP script to handle form submissions -->
+        
+                <div class="form-group">
+                    <label for="name">Your name</label>
+                    <input type="text" id="name" name="name" placeholder="name" required onblur="validateField('name', 'Name is required.')">
+                    <small id="name-error" class="error"></small> <!-- Validation message for name -->
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required onblur="validateField('email', 'Email is required.')">
+                    <small id="email-error" class="error"></small> <!-- Validation message for email -->
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone number</label>
+                    <input type="number" id="phone" name="phone" placeholder="phone" required onblur="validateField('phone', 'Phone number is required.')">
+                    <small id="phone-error" class="error"></small> <!-- Validation message for phone -->
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="message" required onblur="validateField('message', 'Message is required.')"></textarea>
+                    <small id="message-error" class="error"></small> <!-- Validation message for message -->
+                </div>
+                <small id="formerror" class="error"></small>
+        <br>
+                <button type="submit" class="btn">Submit</button>
             </form>
-            <address>
-                <p><strong>Address:</strong> 123 Main Street, xyz, abcds</p>
-                <p><strong>Email:</strong> info@example.com</p>
-                <p><strong>Phone:</strong> +1 (123) 456-7890</p>
-            </address>
+        </div>
 
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 My Company. All rights reserved.</p>
+    <footer class="footer">
+        &copy; 2023 My COMPANY<br>
+        123 Main Street, xyz, abcds<br>
+        Phone: (123) 456-7890<br>
+        Email: info@mywebsite.com
     </footer>
+
     <script>
-        function validateEmail(email) {
-            // Regular expression for a basic email validation
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address');
+        function validateField(fieldName, errorMessage) {
+            var fieldValue = document.getElementById(fieldName).value;
+            var errorElement = document.getElementById(fieldName + "-error");
+    
+            // Validate the specific field based on its name
+            if (fieldValue.trim() === '') {
+                errorElement.textContent = errorMessage;
+            } else {
+                errorElement.textContent = '';
             }
         }
     </script>

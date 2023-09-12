@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration - MY COMPANY</title>
+    <title>Sign up - MY COMPANY</title>
     <link rel="stylesheet" type="text/css" href="styles\style.css">
     <script lang="javascript" src="script/script.js"></script>
 </head>
 
-<body>
+<body onload="setMaxDate()">
     <header>
         <img class="logo" src="images/icons/logonew.ico" alt="Logo">
         <span class="logoname">MY COMPANY</span>
@@ -23,66 +23,85 @@
         
     </header>
     <div class="container">
-        <h2>Register</h2>
+        <h2>Sign up</h2>
         <form action="loginform.html" method="post">
 
             <div class="form-group">
                 <label for="username">First Name</label>
-                <input type="text" id="username" name="fname" placeholder="your first name" required>
+                <input type="text" id="firstname" name="fname" placeholder="first" required onfocusout = "validateEmptyInput(this.id)">
+                <small id="firstnameerror" class="error"></small>
             </div>
+            <br>
             <div class="form-group">
                 <label for="username">Last Name</label>
-                <input type="text" id="username" name="lname" placeholder="your last name" required>
+                <input type="text" id="lastname" name="lname" placeholder="last" required onfocusout = "validateEmptyInput(this.id)">
+                <small id="lastnameerror" class="error"></small>
             </div>
+            <br>
             <div class="form-group">
                 <label for="dob">Date of Birth (dd-mm-yyyy)</label>
-                <input type="date" id="dob" name="dob" required>
+                <input type="date" id="dob" name="dob" required onchange="calculateAge()">
+                <small id="error" class="error"></small>
             </div>
+            <br>
             <div class="form-group">
                 <label for="age">Age</label>
-                <input type="number" id="age" name="age" placeholder="Enter your age" required>
+                <input type="number" id="age" name="age" placeholder="age" required readonly>
             </div>
+            <br>
             <div class="form-group">
                 <label>Gender</label>
-                <label><input type="radio" name="gender" value="male" required> Male</label>
-                <label><input type="radio" name="gender" value="female" required> Female</label>
+                <label>
+                <input type="radio" name="gender" value="male" required> Male
+                <input type="radio" name="gender" value="female" required> Female
+                <input type="radio" name="gender" value="Others" required> Others
+                </label>
             </div>
+            <br>
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="number" id="phone" name="phone" placeholder="Enter your phone number" required>
+                <input type="number" id="phone" name="phone" placeholder="phone" required onfocusout="validateNumber()">
+                <small id="number-error" class="error"></small>
+                <br>
             </div>
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required
-                    onfocusout="validateEmail(this.value)">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="email" required onfocusout="validateEmail()">
+                <small id="email-error" class="error"></small>
             </div>
+            <br>
             <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" id="address" name="address" placeholder="Enter your address" required>
+                <input type="text" id="address" name="address" placeholder="address" required onfocusout = "validateEmptyInput(this.id)">
+                <small id="addresserror" class="error"></small>
             </div>
+            <br>
             <div class="form-group">
                 <label for="state">State</label>
-                <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt"></select>
+                <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" required></select>
             </div>
             <div class="form-group">
                 <label for="city">City</label>
-                <select id="state" name="city"></select>
+                <select id="state" name="city" required></select>
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Choose a username" required onfocusout="validateEmail(this.value)">
+                <input type="text" id="username" name="username" placeholder="username" required onfocusout="checkUsername()">
+                <small id="username-error" class="error"></small>
             </div>
+            <br>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Choose a password" required
-                    onfocusout="validatePassword()">
+                <input type="password" id="password" name="password" placeholder="password" required onfocusout="validatePassword()">
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
-                <span id="password-error" class="error"></span>
+                <small id="password-error" class="error"></small>
             </div>
+            <br><br>
             <button type="submit" class="btn">Register</button>
+            <button type="reset" class="btn">Reset</button>
         </form>
         <div class="login-link">
             Already have an account? <a href="loginform.html">Login</a>
@@ -98,16 +117,8 @@
         Phone: (123) 456-7890<br>
         Email: info@mywebsite.com
     </footer>
-
-    <script>
-        function validateEmail(email) {
-            // Regular expression for a basic email validation
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address');
-            }
-        }
-    </script>
+    
+    <script language="javascript">print_state("sts");</script>
 </body>
 
 </html>
