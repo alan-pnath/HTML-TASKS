@@ -158,13 +158,14 @@ function calculateAge() {
     var dobDate = new Date(dobInput);
     var currentDate = new Date();
     var age = currentDate.getFullYear() - dobDate.getFullYear();
+    document.getElementById("age").value = age;
 
     if (age < 18) {
         dobError.textContent = "Age must be above 18";
-        dobInput.value = "";
     }
-
-    document.getElementById("age").value = age;
+    else{
+        dobError.textContent = "";
+    }   
 }
 
 
@@ -232,7 +233,7 @@ function validateEmptyInput(inputId) {
     const inputValue = inputElement.value.trim();
 
     if (inputValue === '') {
-        validationMessageElement.textContent = 'text field cannot be empty';
+        validationMessageElement.textContent = inputId + ' cannot be empty';
     } else {
         validationMessageElement.textContent = '';
     }

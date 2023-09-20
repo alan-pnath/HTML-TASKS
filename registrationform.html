@@ -15,10 +15,10 @@
         <span class="logoname">MY COMPANY</span>
         <nav class="navtxt">
             <a href="website.html">Home</a>
-            <a href="aboutus.html">About Us</a>
+            <a href="aboutus.html">About us</a>
             <a href="loginform.html">Sign In</a>
             <a href="registrationform.html">Sign Up</a>
-            <a href="contactus.html">Contact Us</a>
+            <a href="contactus.html">Contact us</a>
         </nav>
         
     </header>
@@ -27,26 +27,27 @@
         <form action="loginform.html" method="post">
 
             <div class="form-group">
-                <label for="username">First Name</label>
+                <label for="username">First name</label>
                 <input type="text" id="firstname" name="fname" placeholder="first" required onfocusout = "validateEmptyInput(this.id)">
                 <small id="firstnameerror" class="error"></small>
             </div>
             <br>
             <div class="form-group">
-                <label for="username">Last Name</label>
+                <label for="username">Last name</label>
                 <input type="text" id="lastname" name="lname" placeholder="last" required onfocusout = "validateEmptyInput(this.id)">
                 <small id="lastnameerror" class="error"></small>
             </div>
             <br>
             <div class="form-group">
-                <label for="dob">Date of Birth (dd-mm-yyyy)</label>
+                <label for="dob">Date of birth (dd-mm-yyyy)</label>
                 <input type="date" id="dob" name="dob" required onchange="calculateAge()">
-                <small id="error" class="error"></small>
+                
             </div>
             <br>
             <div class="form-group">
                 <label for="age">Age</label>
                 <input type="number" id="age" name="age" placeholder="age" required readonly>
+                <small id="dob-error" class="error"></small>
             </div>
             <br>
             <div class="form-group">
@@ -59,7 +60,7 @@
             </div>
             <br>
             <div class="form-group">
-                <label for="phone">Phone Number</label>
+                <label for="phone">Phone number</label>
                 <input type="number" id="phone" name="phone" placeholder="phone" required onfocusout="validateNumber()">
                 <small id="number-error" class="error"></small>
                 <br>
@@ -82,7 +83,7 @@
             </div>
             <div class="form-group">
                 <label for="city">City</label>
-                <select id="state" name="city" required></select>
+                <select id="state" name="city" required><option>Select City</option></select>
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
@@ -95,16 +96,16 @@
                 <input type="password" id="password" name="password" placeholder="password" required onfocusout="validatePassword()">
             </div>
             <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                <label for="confirm-password">Confirm password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
                 <small id="password-error" class="error"></small>
             </div>
             <br><br>
-            <button type="submit" class="btn">Register</button>
+            <button type="submit" class="btn">Sign up</button>
             <button type="reset" class="btn">Reset</button>
         </form>
         <div class="login-link">
-            Already have an account? <a href="loginform.html">Login</a>
+            Already have an account? <a href="loginform.html">Sign in</a>
         </div>
         <!-- <div class="login-link">
             Home Page <a href="website.html">HOME</a>
